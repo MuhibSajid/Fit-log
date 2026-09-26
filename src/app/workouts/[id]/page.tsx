@@ -1,6 +1,6 @@
-import React from 'react';
 
-const WorkoutPage = () => {
+
+const WorkoutDetelisPage = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const WorkoutPage = () => {
     );
 };
 
-export default WorkoutPage;
+export default WorkoutDetelisPage;

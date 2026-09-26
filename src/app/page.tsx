@@ -1,9 +1,22 @@
+import { IWorkout } from "@/types/workout";
+import Hero from "@/components/home/Hero";
+import LibraryGridPage from "@/components/home/LibraryGrid";
 
+const getWorkOut = async (): Promise<IWorkout[]> => {
+  const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
+  const data = await res.json();
+  return data;
+};
 
-export default function Home() {
+const Home = async () => {
+  const workOutDatas = await getWorkOut();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <h1 className="text-4xl font-bold text-zinc-800 dark:text-zinc-100">Fit Log</h1>
+    <div className="container mx-auto">
+      <Hero />
+      <LibraryGridPage workOutDatas={workOutDatas} />
     </div>
   );
-}
+};
+
+export default Home;
