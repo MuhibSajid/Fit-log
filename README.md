@@ -5,7 +5,7 @@
 -----------
 
 ### 2.Short Description
--FitLog is a gym-focused app built with Next.js. It offers features such as browsing workout lists, viewing detailed exercise instructions, creating daily workout plans, and saving exercises for future use—all powered by a live REST API.
+- FitLog is a gym-focused app built with Next.js. It offers features such as browsing workout lists, viewing detailed exercise instructions, creating daily workout plans, and saving exercises for future use—all powered by a live REST API.
 
 ----------
 

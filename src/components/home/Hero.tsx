@@ -3,7 +3,7 @@ import BannerImage from "@/assets/banner.png";
 
 const Hero = () => {
     return (
-        <div className="max-w-7xl mx-auto  py-10">
+        <div className="container mx-auto  py-10">
             <div className="flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl border border-border bg-surface px-10 py-14">
                 <div className="flex flex-col gap-4 max-w-xl">
                     <h5 className="font-oswald font-semibold text-sm tracking-wide uppercase text-accent">
