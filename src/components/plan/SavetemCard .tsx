@@ -11,8 +11,8 @@ const SaveItemCard = ({ item }: { item: IWorkout }) => {
     const { removeFromSaved } = usePlan();
 
     return (
-        <div className="bg-surface border border-border rounded-xl p-3 flex items-center gap-4">
-            <div className="relative w-36 h-20 rounded-lg overflow-hidden shrink-0">
+        <div className="bg-surface border border-border rounded-xl p-3 flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="relative w-full h-40 sm:w-36 sm:h-20 rounded-lg overflow-hidden shrink-0">
                 <Image
                     src={item.image}
                     alt={item.name}
@@ -21,12 +21,12 @@ const SaveItemCard = ({ item }: { item: IWorkout }) => {
                 />
             </div>
 
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
                 <h4 className="font-oswald font-bold uppercase text-foreground text-base">
                     {item.name}
                 </h4>
                 <p className="text-muted text-sm">{item.equipment}</p>
-                <div className="flex items-center gap-4 text-sm text-muted-light mt-1">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-light mt-1">
                     <span className="flex items-center gap-1">
                         <Clock size={14} className="text-accent" />
                         {item.duration} min
@@ -42,10 +42,10 @@ const SaveItemCard = ({ item }: { item: IWorkout }) => {
                 </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 sm:shrink-0">
                 <Link
                     href={`/workouts/${item.id}`}
-                    className="border border-border text-foreground text-sm font-oswald px-5 py-2.5 rounded-full"
+                    className="border border-border text-foreground text-sm font-oswald px-5 py-2.5 rounded-full text-center flex-1 sm:flex-none"
                 >
                     View Details
                 </Link>
