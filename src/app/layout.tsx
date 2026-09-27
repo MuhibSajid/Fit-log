@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Oswald, Geist, Geist_Mono,  } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
-import FooterPage from "@/components/layout/Footer";
+import { PlanProvider } from "@/context/PlanContext";
+import Footer from "@/components/layout/Footer";
 
 
 const oswald = Oswald({
@@ -34,11 +35,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased`}
     >   
-      <body className="min-h-full flex flex-col">
-        <Header />
-        {children}
-        <FooterPage/>
-        </body>
+      <body className="...">
+        <PlanProvider>
+          <Header />
+            <main className="flex-1">{children}</main>
+          <Footer />
+        </PlanProvider>
+      </body>
     </html>
   );
 }

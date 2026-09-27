@@ -1,13 +1,12 @@
 import Image from "next/image";
-import { CalendarPlus, Bookmark } from "lucide-react";
 import { IWorkout } from "@/types/workout";
-
+import AddToPlanButtons from "../../../components/workout/AddToPlanButtons";
+import SaveForLaterButtons from "../../../components/workout/SaveForLaterButton";
 
 interface IWorkoutPageParams {
     params: Promise<{ id: string }>;
 
 }
-
 
 const getWorkOut    = async (): Promise<IWorkout[]> => {
   const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
@@ -27,6 +26,8 @@ const WorkoutDetails = async ({ params }: IWorkoutPageParams) => {
             </div>
         );
     }
+
+   
 
     return (
         <div className="max-w-7xl mx-auto px-6 py-12">
@@ -92,14 +93,8 @@ const WorkoutDetails = async ({ params }: IWorkoutPageParams) => {
 
     
                     <div className="flex gap-4 mt-4">
-                        <button className="flex items-center gap-2 bg-accent text-on-accent font-oswald font-semibold text-sm px-5 py-3 rounded-md">
-                            <CalendarPlus size={16} />
-                            Add to today&apos;s plan
-                        </button>
-                        <button className="flex items-center gap-2 border border-border text-foreground font-oswald text-sm px-5 py-3 rounded-md">
-                            <Bookmark size={16} />
-                            Save for later
-                        </button>
+                        <AddToPlanButtons workOut={workOut} />
+                        <SaveForLaterButtons workOut={workOut}/>
                     </div>
                 </div>
             </div>

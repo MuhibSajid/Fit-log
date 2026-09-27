@@ -58,6 +58,7 @@ export default function Header() {
             </span>
           </div>
           <div className="flex items-center gap-2">
+            
             <span className="text-muted">Saved</span>
             <span className="flex items-center justify-center w-5 h-5 rounded-full bg-surface text-muted-light text-xs font-bold">
               {savedCount}
