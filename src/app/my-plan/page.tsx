@@ -80,17 +80,17 @@ const MyPlanPage = () => {
 
     <div className="flex items-center gap-2 text-sm">
         <span className="text-muted shrink-0">Sort By</span>
-        <select
-    value={sortBy}
-    onChange={(e) =>
-        setSortBy(e.target.value as "duration" | "calories" | "rating")
-    }
-    className="appearance-none bg-background border border-border rounded-md pl-3 pr-8 py-2 text-foreground text-sm flex-1 sm:flex-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23888%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>')] bg-no-repeat bg-[right_0.6rem_center]"
->
-    <option value="duration">Duration</option>
-    <option value="calories">Calories</option>
-    <option value="rating">Rating</option>
-</select>
+       <select
+            value={sortBy}
+            onChange={(e) =>
+                setSortBy(e.target.value as "duration" | "calories" | "rating")
+            }
+            className="bg-background border border-border rounded-md px-3 py-2 text-foreground text-sm flex-1 sm:flex-none"
+        >
+            <option value="duration">Duration</option>
+            <option value="calories">Calories</option>
+            <option value="rating">Rating</option>
+        </select>
     </div>
 </div>
 
