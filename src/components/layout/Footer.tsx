@@ -4,7 +4,7 @@ import FooterLogo from "../../assets/footer-logo.png";
 const Footer = () => {
     return (
         <footer className="border-t border-border">
-            <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-6">
+            <div className="container mx-auto flex items-center justify-between px-6 py-6">
                 <div className="flex items-center gap-2">
                     <Image
                         src={FooterLogo}

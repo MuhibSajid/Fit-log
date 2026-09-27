@@ -36,13 +36,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased`}
     >   
-      <body >
+      <body  >
+        <div className="container mx-auto">
         <PlanProvider>
           <Header />
             <main className="flex-1">{children}</main>
           <Footer />
             <ToastContainer />
         </PlanProvider>
+        </div>
       </body>
     </html>
   );
