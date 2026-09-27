@@ -4,10 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import logo from "@/assets/logo.png";
-
-function usePlanCounts() {
-  return { planCount: 0, savedCount: 0 };
-}
+import { usePlan } from "@/context/PlanContext";
 
 const navLinks = [
   { href: "/workouts", label: "Workouts" },
@@ -16,7 +13,9 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const { planCount, savedCount } = usePlanCounts();
+  const { planItems, savedItems } = usePlan();
+  const planCount = planItems.length;
+  const savedCount = savedItems.length;
 
   return (
     <header className="border-b border-border bg-background">
@@ -51,18 +50,19 @@ export default function Header() {
 
         {/* Plan / Saved counters */}
         <div className="flex items-center gap-6 text-sm ">
-          <div className="flex items-center gap-2">
+          <Link href="/my-plan" className="flex items-center gap-2">
             <span className="text-muted">Plan</span>
             <span className="flex items-center justify-center w-5 h-5 rounded-full bg-accent text-on-accent text-xs font-bold">
               {planCount}
             </span>
-          </div>
+          </Link>
           <div className="flex items-center gap-2">
-            
-            <span className="text-muted">Saved</span>
-            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-surface text-muted-light text-xs font-bold">
-              {savedCount}
-            </span>
+            <Link href="/my-plan" className="flex items-center gap-2">
+              <span className="text-muted">Saved</span>
+              <span className="flex items-center justify-center w-5 h-5 rounded-full bg-surface text-muted-light text-xs font-bold">
+                {savedCount}
+              </span>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, Flame, Star, X, Check } from "lucide-react";
+import { Clock, Flame, Star, X } from "lucide-react";
 import { IWorkout } from "@/types/workout";
 import { usePlan } from "@/context/PlanContext";
 import { toast } from "react-toastify";
 
-const PlanItemCard = ({ item }: { item: IWorkout }) => {
-    const { removeFromPlan } = usePlan();
+const SaveItemCard = ({ item }: { item: IWorkout }) => {
+    const { removeFromSaved } = usePlan();
 
     return (
         <div className="bg-surface border border-border rounded-xl p-3 flex items-center gap-4">
@@ -49,14 +49,10 @@ const PlanItemCard = ({ item }: { item: IWorkout }) => {
                 >
                     View Details
                 </Link>
-                <button className="flex items-center gap-1.5 bg-accent text-on-accent text-sm font-oswald font-semibold px-5 py-2.5 rounded-full">
-                    <Check size={14} />
-                    Mark as Done
-                </button>
                 <button
                     onClick={() => {
-                        removeFromPlan(item.id);
-                        toast.success("Removed from plan");
+                        removeFromSaved(item.id);
+                        toast.info(`${item.name} removed from Saved`);
                     }}
                     className="text-muted hover:text-foreground px-1"
                 >
@@ -67,4 +63,4 @@ const PlanItemCard = ({ item }: { item: IWorkout }) => {
     );
 };
 
-export default PlanItemCard;
+export default SaveItemCard;

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import { PlanProvider } from "@/context/PlanContext";
 import Footer from "@/components/layout/Footer";
+import { ToastContainer } from "react-toastify";
 
 
 const oswald = Oswald({
@@ -35,11 +36,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased`}
     >   
-      <body className="...">
+      <body >
         <PlanProvider>
           <Header />
             <main className="flex-1">{children}</main>
           <Footer />
+            <ToastContainer />
         </PlanProvider>
       </body>
     </html>
