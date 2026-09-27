@@ -1,5 +1,4 @@
 import { IWorkout } from '@/types/workout';
-import React from 'react';
 import WorkOutCard from './WorkOutCard';
 
 const LibraryGridPage = ({ workOutDatas = [] }: { workOutDatas?: IWorkout[] }) => {

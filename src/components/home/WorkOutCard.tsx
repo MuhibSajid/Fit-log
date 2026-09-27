@@ -1,9 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Clock, Flame, Star } from "lucide-react";
 import { IWorkout } from "@/types/workout";
 
 const WorkOutCard = ({ workOut }: { workOut: IWorkout }) => {
   return (
+    <div> 
+        <Link href={`/workouts/${workOut.id}`}>
     <div className="bg-surface border border-border rounded-xl overflow-hidden">
       <div className="relative w-full aspect-4/3">
         <Image
@@ -46,6 +49,8 @@ const WorkOutCard = ({ workOut }: { workOut: IWorkout }) => {
           </span>
         </div>
       </div>
+    </div>
+    </Link>
     </div>
   );
 };

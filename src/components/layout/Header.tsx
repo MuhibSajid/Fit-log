@@ -10,7 +10,7 @@ function usePlanCounts() {
 }
 
 const navLinks = [
-  { href: "/", label: "Workouts" },
+  { href: "/workouts", label: "Workouts" },
   { href: "/my-plan", label: "My Plan" },
 ];
 
